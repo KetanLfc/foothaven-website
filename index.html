@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootHaven</title>
+    <link rel="stylesheet" href="main.css">
+<style>
+
+</style>
+</head>
+<body>
+  <p class="navbar-brand" href="#">FootHaven</p>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="./product.html">Products</a>
+  <a href="contact.html" >Contact Us</a>
+  <a href="./about.html">About Us</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+    <div class="img-slider">
+      <div class="slide active">
+        <img src="./1/2019-Hot-Men-Loafers-Classic-British-Casual-Shoes-High-Quality-PU-Comfortable-Man-Flats-Lightweight-Adult.jpg" alt="image.jpg">
+        <div class="info">
+   <br><br> <h2>Step into a world of unparalleled comfort.</h2>
+          
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./1/dumbbells-2465478__340.jpg" alt="image.jpg">
+        <div class="info">
+          <h2>Feel the difference with our shoes.</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./1/istockphoto-1347455404-612x612.jpg" alt="image.jpg">
+        <div class="info">
+          <h2>Say goodbye to sore feet and hello to all-day comfort.</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./1/istockphoto-1158545082-612x612.jpg" alt="image.jpg">
+        <div class="info">
+          <h2>Put your best foot forward with our shoes.</h2>
+          
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./1/dsw1.jpg" alt="image.jpg">
+        <div class="info">
+          <h2>Find your perfect fit and feel the difference in every step.</h2>
+          
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+  </body>
+</html>
